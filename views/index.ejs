@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test work by Nikolay Balielov</title> 
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+   
+</head>
+<body>
+    <nav class="nav"  style="justify-content: center; text-align: center;">
+        <div class="nav-wrapper indigo lighten-5">
+          <form class="form"  action="/" method="post">
+           
+            <ul id="nav-mobile" class="hide-on-med-and-down">
+                   <li><img class="mainLogo" src="/logo/logo.svg" alt="ONIX"></li>
+                <li>                                    
+                    <input id="giphy"  name="giphy"
+                    placeholder="search..."
+                    style="border: 1px solid blue; padding: 2px; border-radius: 15px; margin-left: 10px;" 
+                    class="search z-depth-3"
+                    type="text">
+               </li>
+                <li><button type="submit" style="margin-left: 25px; margin-bottom: 5px;" class="btn blue darken-2">GO</button>
+                </li>
+                <li><a href="#" style="color: blue; margin-left: 20px;">GitHub</a></li>
+            </ul>
+          </form>
+           
+        </div>
+    </nav>
+    <div class="content">
+    <% data.forEach ( item=> { %>
+    
+        <div class="giphyes">
+            <div class="logowatermark"><img class="logoOnix" src="/logo/logo.svg"  alt="ONIX"></div>
+            <img class="images" src="<%= item.images.original.url %>" alt="">
+        </div>
+        <% }) %>
+
+    </div>
+    
+</body>
+<footer class="page-footer blue lighten-1">
+    <div class="container">
+        <div class="row">
+            <div class="col l6 s12">
+                <h5 class="white-text"></h5>
+                <br>
+                <p class="grey-text text-lighten-4">"Forget all the reasons it won’t work and believe the one reason that it will."
+                </p>
+            </div>
+            <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Contacts:</h5>
+                <ul>
+                    <li><a class="grey-text text-lighten-3" href="tel: +380683335467">+38-(068)-333-54-76</a></li>
+                    <li><a class="grey-text text-lighten-3" href="mailto: balelkin@gmail.com">balelkinn@gmail.com</a></li>
+                    <li><a class="grey-text text-lighten-3" href="https://www.facebook.com/balielov/" target="_blank">Facebook</a></li>
+                    
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2021 Nikolay Balielov
+            <a class="grey-text text-lighten-4 right" href="#!">GitHub</a>
+        </div>
+    </div>
+</footer>
+</div>
+</footer>
+</html>
