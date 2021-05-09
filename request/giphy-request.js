@@ -5,7 +5,7 @@ const fs = require('fs')
 module.exports = async function (giphy){
 if (!giphy){
    giphy==='no text'
-// throw new Error('Ведите имя гифки')
+ throw new Error('Ведите имя гифки')
 }
 const KEY = '5CbzSikG64Ig5qWtq4FguBj163mW5WpR'
 const url =`http://api.giphy.com/v1/gifs/search?q=${giphy}&api_key=${KEY}&limit=10&rating=g`
@@ -19,7 +19,7 @@ json: true,
 
 }
 const response = await rp(requestParameters)
-  // console.log(response) 
+  
   
 function headleResult () {
        fs.writeFileSync('result.json', JSON.stringify(response), (err) =>{

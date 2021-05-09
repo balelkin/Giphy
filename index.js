@@ -13,17 +13,19 @@ app.use(express.static('public'))
 app.use(bodyParser.urlencoded({extended: true}))
 app.get('/', (reg, res) =>{
     res.render('index')
-   
+  
    
 })
 app.post('/', (req, res) =>{
    const {giphy} = req.body
    giphyRequest(giphy)
    
-  const all= fs.readFileSync('result.json', 'utf-8')
+  const all = fs.readFileSync('result.json', 'utf-8', (err, data) => {
+        if(err) throw err;
+        console.log(data);
+    });
    const allResult = JSON.parse(all)
-  
-   res.render('index', {data: allResult.data})
+  res.render('index', {data: allResult.data})
   
 })
 
